@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+
+html, body {
+    margin: 0;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.intro {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: url("images/introimages.jpg") no-repeat 50% 50%;
+    display: table;
+    top: 0;
+    background-size: cover;
+}
+
+.intro .inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    max-width: auto;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn {
+    font-family: "Yantramanav", sans-serif;
+    font-weight: 400;
+    letter-spacing: 17px;
+    color: #EF5529;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: solid #EF5529;
+    padding: 10px 20px;
+    border-radius: 9px;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    color: #E0E1DC;
+    border: solid #E0E1DC;
+    letter-spacing: 19px;
+    cursor: pointer;
+}
+
+.introtext {
+    font-family: "Yantramanav", sans-serif;
+    color: #E0E1DC;
+    text-align: left;
+    font-size: 70%;
+    font-weight: 400;
+    letter-spacing: 5px;
+    max-width: 600px;
+    transition: all 0.5s;
+}
+
+#typing_text {
+    font-family: "Yantramanav", sans-serif;
+    color: #E0E1DC;
+    text-align: center;
+    font-size: 100%;
+    font-weight: 400;
+    letter-spacing: 5px;
+    max-width: 600px;
+    padding: 50px 20px;
+}
+
+h1{
+    font-family: "Yantramanav", sans-serif;
+    font-weight: 400;
+    color: #EF5529;
+    font-size: 100%;
+    letter-spacing: 3px;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*--- Media Queries --*/
+@media screen and (max-width: 900px) {
+	.content{
+		padding-bottom: 30%;
+	}
+	.btn {
+		font-size:130%;
+		padding: 9px 17px;
+	}
+
+}
+@media only screen and (device-width: 768px),
+       only screen and (max-width: 768px) {
+	.content{
+		padding-bottom: 40%;
+	}
+	.btn {
+		font-size:80%;
+		padding: 9px 15px;
+	}
+  .fixed-nav-bar {
+    visibility: hidden;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+	.content{
+		padding-bottom: 50%;
+	}
+	.btn {
+		font-size:100%;
+		padding: 6px 14px;
+	}
+	.p{
+		font-size: 100%;
+		line-height:100%;
+	}
+
+
+}
+
+
+
+/* bouncing scroll button */
+
+.scroll-down {
+    opacity: 1;
+    -webkit-transition: all .5s ease-in 1s;
+    transition: all .5s ease-in 1s;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #FFF;
+    background-size: 14px auto;
+    border-radius: 50%;
+    z-index: 2;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    60% {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+
+/* NAVBAR */
+
+* {
+    -webkit-transition: 1s ease;
+    transition: 0.5s ease;
+}
+
+.fixed-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 5%;
+    padding: 0 25px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.02);
+    -webkit-box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s ease;
+    transition: 0.5s ease;
+}
+
+.fixed-nav-bar.scrolled {
+    max-height: 7%;
+    transition: 0.5s ease;
+    background-color: #1C2833;
+    -webkit-box-shadow: 0 0 30px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+/* nav bar list of links*/
+
+.fixed-nav-bar ul {
+    font-family: "Yantramanav", sans-serif;
+    list-style: none;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 0.5s;
+}
+
+.fixed-nav-bar ul li {
+    display: inline-block;
+    padding: 20px;
+    ;
+}
+
+.fixed-nav-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+
+.fixed-nav-bar ul li a:hover {
+    color: #EF5529;;
+    font-size: 16px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+
+/* sevices cards*/
+
+.row {
+  padding-bottom: 25%; /* change this later*/
+}
+
+h3 {
+    color: #EF5529;
+}
+
+.text {
+  font-family: "Yantramanav", sans-serif;
+    color: #EF5529;
+    text-align: center;
+
+}
+
+.folded-corner:hover .text {
+    visibility: visible;
+    color: #ECF0F1; /* font colour after hover*/
+    transition: all ease .1s;
+}
+
+.Services-tab {
+    margin-top: 20px;
+}
+
+.folded-corner {
+    padding: 25px 25px;
+    position: relative;
+    font-size: 90%;
+    text-decoration: none;
+    color: #ECF0F1;
+    background: transparent;
+    transition: all ease .1s;
+}
+
+.folded-corner:hover {
+    background-color: #EF5529;
+}
+
+
+/* paper fold corner  */
+.folded-corner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0px 0px 0;
+    border-color: #ddd #1C2833;
+    transition: all ease .1s;
+}
+
+
+/*
+  on li hover make paper fold larger
+*/
+
+.folded-corner:hover:before {
+    background-color: #EF5529;
+    border-width: 0px 50px 50px 0;
+    border-color: #eee #34495E; /* fold over corner tab */
+}
+
+/* colour of my services card */
+.service_tab_1 {
+    background-color: #1C2833;
+}
+
+/* image on my service card, animation size in */
+.service_tab_1:hover .fa-icon-image {
+    color: #1C2833;
+    transform: rotate(360deg) scale(1.5);
+}
+
+.fa-icon-image {
+    color: #EF5529;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    -moz-font-feature-settings: normal;
+    -moz-font-language-override: normal;
+    text-rendering: auto;
+    transition: all .65s linear 0s;
+    text-align: center;
+    transition: all 1s cubic-bezier(.99, .82, .11, 1.41);
+}
+
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling.
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+
+/*skill set percentage bar */
+
+.titulo {
+  font-family:"Yantramanav", sans-serif;
+  font-size:20px;
+  text-align:center;
+  color:#999;
+}
+.barras {
+  width:320px;
+  margin:10px auto;
+}
+.barra {
+  width:300px;
+  height:30px;
+  background:#CCC;
+  margin:10px;
+}
+.barra-nivel {
+  height:30px;
+  background: #EF5529;;
+  width:1px;
+  -webkit-transition: width 1s ease;
+  -moz-transition: width 1s ease;
+  transition: width 1s ease;
+}
+
+.valor-nivel {
+  line-height:30px;
+  color:#fff;
+  margin-left:10px;
+  font-family:"Yantramanav", sans-serif;
+  font-size:12px;
+}
+
+/* responsive image gallery */
+
+.container {
+  margin: auto;
+  border: #fff solid 5px;
+  background: #fff;
+}
+
+/* mak images fill their container*/
+img {
+  max-width: 100%;
+}
+img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* CSS Grid*/
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+}
+
+/* Media Query for changing grid on bigger screens*/
+
+/* Bigger than Phones(tablet) */
+@media only screen and (min-width: 750px) {
+  .img-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Bigger than Phones(laptop / desktop) */
+@media only screen and (min-width: 970px) {
+  .img-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
